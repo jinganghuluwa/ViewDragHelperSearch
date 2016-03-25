@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunduo.rabbitproject.DragView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yunduo.rabbitproject.MainActivity">
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_blue_bright"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="150dp"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:text="2"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="300dp"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center"
+        android:text="3"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="450dp"
+        android:gravity="center"
+        android:text="4" />
+</com.yunduo.rabbitproject.DragView>
