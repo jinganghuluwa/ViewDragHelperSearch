@@ -21,8 +21,6 @@ public class DragView extends FrameLayout {
     private ViewDragHelper mDragger;
     private ViewDragHelper.Callback mCallback;
 
-    private int width;
-    private int height;
 
     public DragView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -43,8 +41,6 @@ public class DragView extends FrameLayout {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        width = getWidth();
-        height = getHeight();
     }
 
     public int Horizontal(View child, int dx) {
