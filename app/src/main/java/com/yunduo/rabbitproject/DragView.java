@@ -98,10 +98,10 @@ public class DragView extends FrameLayout {
                 }
             }
         }
-        
+
         int top = child.getTop() + dy;
         int topBound = getPaddingTop();
-        int bottomBound = getWidth() - child.getWidth() - getPaddingBottom();
+        int bottomBound = getHeight() - child.getHeight() - getPaddingBottom();
         int newTop = Math.min(Math.max(top, topBound), bottomBound);
         return newTop;
     }
@@ -120,6 +120,7 @@ public class DragView extends FrameLayout {
     private boolean isLeft(View child, View view) {
         if (child.getRight() <= view.getLeft()) {
             return true;
+
         }
         return false;
     }
@@ -158,6 +159,24 @@ public class DragView extends FrameLayout {
         @Override
         public int clampViewPositionVertical(View child, int top, int dy) {
             return Vertical(child, dy);
+        }
+
+        @Override
+        public int getViewHorizontalDragRange(View child) {
+            int left = child.getLeft();
+            int leftBound = getPaddingLeft();
+            int rightBound = getWidth() - child.getWidth() - getPaddingRight();
+            int newLeft = Math.min(Math.max(left, leftBound), rightBound);
+            return newLeft;
+        }
+
+        @Override
+        public int getViewVerticalDragRange(View child) {
+            int top = child.getTop();
+            int topBound = getPaddingTop();
+            int bottomBound = getHeight() - child.getHeight() - getPaddingBottom();
+            int newTop = Math.min(Math.max(top, topBound), bottomBound);
+            return newTop;
         }
     }
 
