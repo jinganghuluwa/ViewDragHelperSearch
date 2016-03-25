@@ -98,6 +98,7 @@ public class DragView extends FrameLayout {
                 }
             }
         }
+        
         int top = child.getTop() + dy;
         int topBound = getPaddingTop();
         int bottomBound = getWidth() - child.getWidth() - getPaddingBottom();
