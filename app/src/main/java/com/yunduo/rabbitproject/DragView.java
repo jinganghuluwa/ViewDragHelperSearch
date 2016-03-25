@@ -70,7 +70,6 @@ public class DragView extends FrameLayout {
         int left = child.getLeft() + dx;
         int leftBound = getPaddingLeft();
         int rightBound = getWidth() - child.getWidth() - getPaddingRight();
-
         int newLeft = Math.min(Math.max(left, leftBound), rightBound);
         return newLeft;
     }
