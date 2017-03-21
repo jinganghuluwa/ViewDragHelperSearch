@@ -1,10 +1,8 @@
-package com.yunduo.rabbitproject;
+package com.tongzhichao.drag;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
