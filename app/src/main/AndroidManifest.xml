@@ -22,6 +22,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.tongzhichao.circleprogress.CircleProgressActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.tongzhichao.path.CurveActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
