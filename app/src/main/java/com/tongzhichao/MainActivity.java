@@ -16,6 +16,9 @@ import com.tongzhichao.path.CircleActivity;
 import com.tongzhichao.drag.DragActivity;
 import com.tongzhichao.example.R;
 import com.tongzhichao.path.CurveActivity;
+import com.tongzhichao.path.DropActivity;
+import com.tongzhichao.path.FourPathCircleActivity;
+import com.tongzhichao.path.PointActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
         initData();
     }
 
-    private void initData(){
+    private void initData() {
         mDataList.add(new ViewBean("Drag", DragActivity.class));
         mDataList.add(new ViewBean("Circle", CircleActivity.class));
         mDataList.add(new ViewBean("Progress", CircleProgressActivity.class));
         mDataList.add(new ViewBean("Curve", CurveActivity.class));
+        mDataList.add(new ViewBean("Point", PointActivity.class));
+        mDataList.add(new ViewBean("FourPathCircle", FourPathCircleActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {

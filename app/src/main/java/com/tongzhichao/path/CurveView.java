@@ -96,12 +96,17 @@ public class CurveView extends View {
         mPath.moveTo(getX(0), getY((float) mData.get(0).getY()));
         mPaint.setStrokeWidth(3);
         mPaint.setColor(Color.RED);
+        setPath();
+        canvas.drawPath(mPath, mPaint);
+    }
+
+    private void setPath() {
         for (int i = 0; i < mData.size() - 1; i++) {
-            mPaint.setColor(Color.RED);
             Point one = mData.get(i);
             Point two = mData.get(i + 1);
-            Point three = mData.get(i + 2);
-            if (i == 0 ) {
+
+            if (i == 0) {
+                Point three = mData.get(i + 2);
                 oneh.setX((one.getX() + two.getX()) / 2);
                 oneh.setY((one.getY() + two.getY()) / 2);
                 twoh.setX((two.getX() + three.getX()) / 2);
@@ -112,7 +117,7 @@ public class CurveView extends View {
                 oneq.setY(oneh.getY() + two.getY() - twoa.getY());
                 mPath.quadTo(getX((float) oneq.getX()), getY((float) oneq.getY()),
                         getX((float) two.getX()), getY((float) two.getY()));
-            }else if( i == mData.size() - 2){
+            } else if (i == mData.size() - 2) {
                 Point before = mData.get(i - 1);
                 oneh.setX((one.getX() + two.getX()) / 2);
                 oneh.setY((one.getY() + two.getY()) / 2);
@@ -124,7 +129,8 @@ public class CurveView extends View {
                 oneq.setY(oneh.getY() + one.getY() - onea.getY());
                 mPath.quadTo(getX((float) oneq.getX()), getY((float) oneq.getY()),
                         getX((float) two.getX()), getY((float) two.getY()));
-            }else if( i == mData.size() - 2){
+            } else if (i < mData.size() - 2) {
+                Point three = mData.get(i + 2);
                 mPath.moveTo(getX((float) mData.get(i).getX()), getY((float) mData.get(i).getY()));
                 Point before = mData.get(i - 1);
                 beforeh.setX((one.getX() + before.getX()) / 2);
@@ -144,18 +150,8 @@ public class CurveView extends View {
                 mPath.cubicTo(getX((float) oneq.getX()), getY((float) oneq.getY()),
                         getX((float) twoq.getX()), getY((float) twoq.getY()),
                         getX((float) two.getX()), getY((float) two.getY()));
-                mPaint.setColor(Color.BLUE);
-                canvas.drawPoint(getX((float) oneh.getX()), getY((float) oneh.getY()), mPaint);
-                canvas.drawPoint(getX((float) twoh.getX()), getY((float) twoh.getY()), mPaint);
-                mPaint.setColor(Color.YELLOW);
-                canvas.drawPoint(getX((float) onea.getX()), getY((float) onea.getY()), mPaint);
-                canvas.drawPoint(getX((float) twoa.getX()), getY((float) twoa.getY()), mPaint);
-                mPaint.setColor(Color.GRAY);
-                canvas.drawPoint(getX((float) oneq.getX()), getY((float) oneq.getY()), mPaint);
-                canvas.drawPoint(getX((float) twoq.getX()), getY((float) twoq.getY()), mPaint);
             }
         }
-        canvas.drawPath(mPath, mPaint);
     }
 
     private float getX(float x) {
