@@ -24,7 +24,7 @@ public class CurveView extends View {
     private int width;
     private int height;
 
-    private int wide = 30;
+    private int wide = 17;
     private float density;
 
     Point beforeh = new Point();

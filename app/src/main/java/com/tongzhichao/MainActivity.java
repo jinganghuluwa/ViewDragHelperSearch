@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.tongzhichao.circleprogress.CircleProgressActivity;
+import com.tongzhichao.matrix.ScaleImageActivity;
+import com.tongzhichao.opengl.OpenGLActivity;
 import com.tongzhichao.path.CircleActivity;
 import com.tongzhichao.drag.DragActivity;
 import com.tongzhichao.example.R;
@@ -48,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
         mDataList.add(new ViewBean("Progress", CircleProgressActivity.class));
         mDataList.add(new ViewBean("Curve", CurveActivity.class));
         mDataList.add(new ViewBean("Point", PointActivity.class));
+        mDataList.add(new ViewBean("Drop", DropActivity.class));
         mDataList.add(new ViewBean("FourPathCircle", FourPathCircleActivity.class));
+        mDataList.add(new ViewBean("ScaleImage", ScaleImageActivity.class));
+        mDataList.add(new ViewBean("OpenGL", OpenGLActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {

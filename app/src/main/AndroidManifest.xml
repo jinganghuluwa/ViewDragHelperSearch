@@ -30,6 +30,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.tongzhichao.path.PointActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.tongzhichao.matrix.ScaleImageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.tongzhichao.opengl.OpenGLActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
