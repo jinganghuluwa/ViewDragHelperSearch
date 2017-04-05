@@ -81,8 +81,20 @@ public class OpenGLView extends FrameLayout {
             gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
             gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 
-            gl.glVertexPointer(3, GL10.GL_FLOAT, 0, FloatBuffer.wrap(triangleData));
-            gl.glColorPointer(4, GL10.GL_FLOAT, 0, IntBuffer.wrap(triangleColor));
+            ByteBuffer bb = ByteBuffer.allocateDirect(
+                    triangleData.length * 4);
+            bb.order(ByteOrder.nativeOrder());
+            FloatBuffer floatBuffer = bb.asFloatBuffer();
+            floatBuffer.put(triangleData);
+            floatBuffer.position(0);
+            gl.glVertexPointer(3, GL10.GL_FLOAT, 0, floatBuffer);
+            bb = ByteBuffer.allocateDirect(
+                    triangleColor.length * 4);
+            bb.order(ByteOrder.nativeOrder());
+            IntBuffer intBuffer = bb.asIntBuffer();
+            intBuffer.put(triangleColor);
+            intBuffer.position(0);
+            gl.glColorPointer(4, GL10.GL_FLOAT, 0, intBuffer);
 
             gl.glDrawArrays(GL10.GL_TRIANGLES, 0, 3);
         }

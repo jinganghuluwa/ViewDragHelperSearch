@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mDataList.add(new ViewBean("Drop", DropActivity.class));
         mDataList.add(new ViewBean("FourPathCircle", FourPathCircleActivity.class));
         mDataList.add(new ViewBean("ScaleImage", ScaleImageActivity.class));
-        mDataList.add(new ViewBean("OpenGL", OpenGLActivity.class));
+//        mDataList.add(new ViewBean("OpenGL", OpenGLActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
