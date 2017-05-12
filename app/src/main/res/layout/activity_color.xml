@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tongzhichao.xfermode.ColorActivity">
+
+    <com.tongzhichao.xfermode.ColorView
+        android:id="@+id/testView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/black"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <View
+            android:id="@+id/gray"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp" />
+
+        <View
+            android:id="@+id/red"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp" />
+
+        <View
+            android:id="@+id/green"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp" />
+
+        <View
+            android:id="@+id/blue"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp" />
+
+        <View
+            android:id="@+id/yellow"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+</LinearLayout>

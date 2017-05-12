@@ -6,13 +6,16 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.tongzhichao.circleprogress.CircleProgressActivity;
 import com.tongzhichao.matrix.ScaleImageActivity;
+import com.tongzhichao.meter.MeterActivity;
 import com.tongzhichao.opengl.OpenGLActivity;
 import com.tongzhichao.path.CircleActivity;
 import com.tongzhichao.drag.DragActivity;
@@ -21,6 +24,8 @@ import com.tongzhichao.path.CurveActivity;
 import com.tongzhichao.path.DropActivity;
 import com.tongzhichao.path.FourPathCircleActivity;
 import com.tongzhichao.path.PointActivity;
+import com.tongzhichao.scroll.ScrollActivity;
+import com.tongzhichao.xfermode.ColorActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         initData();
     }
 
+
     private void initData() {
         mDataList.add(new ViewBean("Drag", DragActivity.class));
         mDataList.add(new ViewBean("Circle", CircleActivity.class));
@@ -53,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         mDataList.add(new ViewBean("Drop", DropActivity.class));
         mDataList.add(new ViewBean("FourPathCircle", FourPathCircleActivity.class));
         mDataList.add(new ViewBean("ScaleImage", ScaleImageActivity.class));
-//        mDataList.add(new ViewBean("OpenGL", OpenGLActivity.class));
+        mDataList.add(new ViewBean("Scroll", ScrollActivity.class));
+        mDataList.add(new ViewBean("Meter", MeterActivity.class));
+        mDataList.add(new ViewBean("Color", ColorActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {

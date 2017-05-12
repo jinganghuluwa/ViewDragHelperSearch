@@ -7,7 +7,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name="com.tongzhichao.MainActivity"
+        <activity
+            android:name="com.tongzhichao.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,25 +16,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.tongzhichao.drag.DragActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.path.CircleActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.circleprogress.CircleProgressActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.path.CurveActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.path.DropActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.path.FourPathCircleActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.path.PointActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.matrix.ScaleImageActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.tongzhichao.opengl.OpenGLActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.tongzhichao.drag.DragActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.path.CircleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.circleprogress.CircleProgressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.path.CurveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.path.DropActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.path.FourPathCircleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.path.PointActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.matrix.ScaleImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.opengl.OpenGLActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.scroll.ScrollActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tongzhichao.meter.MeterActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.tongzhichao.xfermode.ColorActivity"></activity>
     </application>
 
 </manifest>
