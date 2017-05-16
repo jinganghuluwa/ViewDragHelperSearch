@@ -14,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.tongzhichao.circleprogress.CircleProgressActivity;
+import com.tongzhichao.hvac.view.HvacActivity;
 import com.tongzhichao.matrix.ScaleImageActivity;
 import com.tongzhichao.meter.MeterActivity;
 import com.tongzhichao.opengl.OpenGLActivity;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mDataList.add(new ViewBean("Scroll", ScrollActivity.class));
         mDataList.add(new ViewBean("Meter", MeterActivity.class));
         mDataList.add(new ViewBean("Color", ColorActivity.class));
+        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {

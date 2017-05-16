@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@mipmap/hvac_bg"
+    android:layout_height="match_parent">
+
+    <com.tongzhichao.hvac.view.TemperatureControlView
+        android:layout_width="370dp"
+        android:layout_height="563dp"
+        android:layout_gravity="bottom|left" />
+
+
+    <com.tongzhichao.hvac.view.TemperatureControlView
+        android:layout_width="370dp"
+        android:layout_height="563dp"
+        android:layout_gravity="bottom|right"
+        app:control_left="false" />
+
+    <com.tongzhichao.hvac.view.FanSpeedView
+        android:layout_width="596dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="120dp" />
+
+    <com.tongzhichao.hvac.view.FanDirectionView
+        android:layout_width="176dp"
+        android:layout_height="204dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="56dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@mipmap/hvac_ic_derection_on"
+        android:layout_marginTop="146dp"
+        android:layout_marginLeft="368dp"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="470dp"
+        android:src="@mipmap/hvac_derection_person"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>
