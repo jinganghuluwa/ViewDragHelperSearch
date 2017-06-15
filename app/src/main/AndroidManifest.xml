@@ -50,7 +50,8 @@
             android:name="com.tongzhichao.meter.MeterActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.tongzhichao.xfermode.ColorActivity" />
-        <activity android:name="com.tongzhichao.hvac.view.HvacActivity"></activity>
+        <activity android:name="com.tongzhichao.hvac.view.HvacActivity"/>
+        <activity android:name="com.tongzhichao.recyclerview.RecyclerViewActivity"/>
     </application>
 
 </manifest>

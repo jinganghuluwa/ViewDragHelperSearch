@@ -25,6 +25,7 @@ import com.tongzhichao.path.CurveActivity;
 import com.tongzhichao.path.DropActivity;
 import com.tongzhichao.path.FourPathCircleActivity;
 import com.tongzhichao.path.PointActivity;
+import com.tongzhichao.recyclerview.RecyclerViewActivity;
 import com.tongzhichao.scroll.ScrollActivity;
 import com.tongzhichao.xfermode.ColorActivity;
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 //        mDataList.add(new ViewBean("Meter", MeterActivity.class));
         mDataList.add(new ViewBean("Color", ColorActivity.class));
 //        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
+        mDataList.add(new ViewBean("RecyclerView", RecyclerViewActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
