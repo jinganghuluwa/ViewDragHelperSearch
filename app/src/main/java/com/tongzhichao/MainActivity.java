@@ -53,17 +53,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         mDataList.add(new ViewBean("Drag", DragActivity.class));
-        mDataList.add(new ViewBean("Circle", CircleActivity.class));
+//        mDataList.add(new ViewBean("Circle", CircleActivity.class));
         mDataList.add(new ViewBean("Progress", CircleProgressActivity.class));
         mDataList.add(new ViewBean("Curve", CurveActivity.class));
         mDataList.add(new ViewBean("Point", PointActivity.class));
         mDataList.add(new ViewBean("Drop", DropActivity.class));
         mDataList.add(new ViewBean("FourPathCircle", FourPathCircleActivity.class));
         mDataList.add(new ViewBean("ScaleImage", ScaleImageActivity.class));
-        mDataList.add(new ViewBean("Scroll", ScrollActivity.class));
-        mDataList.add(new ViewBean("Meter", MeterActivity.class));
+//        mDataList.add(new ViewBean("Scroll", ScrollActivity.class));
+//        mDataList.add(new ViewBean("Meter", MeterActivity.class));
         mDataList.add(new ViewBean("Color", ColorActivity.class));
-        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
+//        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
