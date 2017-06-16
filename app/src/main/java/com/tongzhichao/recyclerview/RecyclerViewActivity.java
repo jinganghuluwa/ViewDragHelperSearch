@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.tongzhichao.example.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by tongzhichao on 17-6-15.
@@ -48,8 +49,10 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     private DefaultItemTouchHelper.ItemListener itemListener = new DefaultItemTouchHelper.ItemListener() {
         @Override
-        public void call(String type, int a, int b) {
-            Log.d("aaa", "type " + type + "  " + a + " : " + b);
+        public void onMove(int move, int target) {
+            Collections.swap(data, move, target);
+            defaultAdapter.notifyItemMoved(move, target);
+            Log.d("aaa", move + " : " + target);
         }
 
         @Override
@@ -79,10 +82,17 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         public class DefaultHolder extends RecyclerView.ViewHolder {
             private TextView name;
+            private View.OnClickListener onClickListener = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("recycler", "position:" + getAdapterPosition() + ",text:" + name.getText());
+                }
+            };
 
             public DefaultHolder(View itemView) {
                 super(itemView);
                 name = (TextView) itemView.findViewById(R.id.item_name);
+                itemView.setOnClickListener(onClickListener);
 
             }
 

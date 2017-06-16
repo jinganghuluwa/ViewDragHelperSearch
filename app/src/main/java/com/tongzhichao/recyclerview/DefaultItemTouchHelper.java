@@ -67,7 +67,7 @@ public class DefaultItemTouchHelper extends ItemTouchHelper {
         @Override
         public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
             Log.d(TAG, "onMove");
-            itemListener.call("onMove", viewHolder.getAdapterPosition(), target.getAdapterPosition());
+            itemListener.onMove(viewHolder.getAdapterPosition(), target.getAdapterPosition());
             return false;
         }
 
@@ -81,7 +81,7 @@ public class DefaultItemTouchHelper extends ItemTouchHelper {
     }
 
     public interface ItemListener {
-        void call(String type, int a, int b);
+        void onMove(int move, int target);
 
         void onSwiped(int position, boolean toright);
     }
