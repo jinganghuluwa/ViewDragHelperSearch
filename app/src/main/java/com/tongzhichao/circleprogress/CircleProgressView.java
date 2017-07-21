@@ -38,10 +38,10 @@ public class CircleProgressView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.d(TAG,"onMeasure");
-        this.width = getWidth();
-        this.height = getHeight();
+        Log.d(TAG,"onMeasure "+widthMeasureSpec+" "+heightMeasureSpec+" "+getWidth());
+        width = MeasureSpec.getSize(widthMeasureSpec);
+        height = MeasureSpec.getSize(heightMeasureSpec);
+        setMeasuredDimension(width,height);
         rectF = new RectF(lineWidth/2, lineWidth/2, width-lineWidth/2, height-lineWidth/2);
 
     }
