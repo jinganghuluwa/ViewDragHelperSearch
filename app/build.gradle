@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId 'com.tongzhichao.example'
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }

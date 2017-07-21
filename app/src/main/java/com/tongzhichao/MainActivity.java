@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 //        mDataList.add(new ViewBean("Meter", MeterActivity.class));
         mDataList.add(new ViewBean("Color", ColorActivity.class));
 //        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
-        mDataList.add(new ViewBean("RecyclerView", RecyclerViewActivity.class));
+//        mDataList.add(new ViewBean("RecyclerView", RecyclerViewActivity.class));
     }
 
     private class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {

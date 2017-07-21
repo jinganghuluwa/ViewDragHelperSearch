@@ -10,6 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
@@ -18,6 +19,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
  */
 
 public class CircleProgressView extends View {
+    private static final String TAG = "CircleProgressView";
     private Paint mPaint;
     private int width, height;
     RectF rectF;
@@ -26,9 +28,9 @@ public class CircleProgressView extends View {
 
     public CircleProgressView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        Log.d(TAG,"CircleProgressView");
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-
         mPaint.setStrokeWidth(lineWidth);
         mPaint.setColor(Color.RED);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -37,6 +39,7 @@ public class CircleProgressView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.d(TAG,"onMeasure");
         this.width = getWidth();
         this.height = getHeight();
         rectF = new RectF(lineWidth/2, lineWidth/2, width-lineWidth/2, height-lineWidth/2);
@@ -59,6 +62,7 @@ public class CircleProgressView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Log.d(TAG,"onDraw");
         canvas.drawArc(rectF, 0, angle, false, mPaint);
     }
 
