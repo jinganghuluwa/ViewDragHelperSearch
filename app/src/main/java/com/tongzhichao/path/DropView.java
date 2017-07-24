@@ -53,8 +53,9 @@ public class DropView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        viewWidth = getWidth();
-        viewHeight = getHeight();
+        viewWidth = MeasureSpec.getSize(widthMeasureSpec);
+        viewHeight = MeasureSpec.getSize(heightMeasureSpec);
+        setMeasuredDimension(viewWidth,viewHeight);
         mCircleOneCenter = new Point();
         mCircleOneCenter.set(viewWidth / 2, viewHeight / 2);
         mCircleTwoCenter = new Point(mCircleOneCenter.x, mCircleOneCenter.y);

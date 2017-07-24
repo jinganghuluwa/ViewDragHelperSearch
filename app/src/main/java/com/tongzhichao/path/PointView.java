@@ -34,8 +34,9 @@ public class PointView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        width = getWidth();
-        height = getHeight();
+        width = MeasureSpec.getSize(widthMeasureSpec);
+        height = MeasureSpec.getSize(heightMeasureSpec);
+        setMeasuredDimension(width,height);
         initPoints();
     }
 
