@@ -1,5 +1,11 @@
 package com.tongzhichao.path;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,6 +19,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 import java.util.logging.LogRecord;
 
@@ -55,7 +62,7 @@ public class DropView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         viewWidth = MeasureSpec.getSize(widthMeasureSpec);
         viewHeight = MeasureSpec.getSize(heightMeasureSpec);
-        setMeasuredDimension(viewWidth,viewHeight);
+        setMeasuredDimension(viewWidth, viewHeight);
         mCircleOneCenter = new Point();
         mCircleOneCenter.set(viewWidth / 2, viewHeight / 2);
         mCircleTwoCenter = new Point(mCircleOneCenter.x, mCircleOneCenter.y);
@@ -187,6 +194,7 @@ public class DropView extends View {
                 if (mIsTouching && canBack()) {
                     Log.d(TAG, "up canback");
                     mIsBacking = true;
+//                    goBack();
                     new Thread(mBackRunable).start();
                 }
                 mIsTouching = false;
@@ -195,6 +203,65 @@ public class DropView extends View {
 
         }
         return true;
+    }
+
+    private void goBack() {
+        Point back;
+        if (canBack()) {
+            back = getBackPoint();
+        } else {
+            back = mCircleOneCenter;
+        }
+        ValueAnimator valueAnimator = ValueAnimator.ofObject(new TypeEvaluator<Point>() {
+            @Override
+            public Point evaluate(float fraction, Point startValue, Point endValue) {
+                Log.d(TAG, "evaluate " + startValue.x + " " + endValue.x + " " + fraction);
+                Point point = new Point();
+                int xl = startValue.x + (int) ((endValue.x - startValue.x) * fraction);
+                int yl = startValue.y + (int) ((endValue.y - startValue.y) * fraction);
+                point.set(xl, yl);
+                return point;
+            }
+        }, mCircleTwoCenter, back);
+        valueAnimator.setDuration(800);
+        valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Point value = (Point) animation.getAnimatedValue();
+                mCircleTwoCenter.set(value.x, value.y);
+                invalidate();
+            }
+        });
+        valueAnimator.addListener(new Animator.AnimatorListener() {
+            private boolean goback;
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                goback = canBack();
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (goback) {
+                    goBack();
+                } else {
+                    mIsBacking = false;
+                }
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        valueAnimator.start();
     }
 
     private void setPath() {
@@ -230,11 +297,16 @@ public class DropView extends View {
                     int y = mCircleTwoCenter.y - back.y;
                     x /= 20;
                     y /= 20;
+
                     for (int i = 0; i < 20; i++) {
                         if (i == 19) {
                             mCircleTwoCenter.set(back.x, back.y);
                         } else {
+//                            float value = getInterpolation((((float) i) / 20f));
+//                            Log.d(TAG, "value " + value);
+//                            mCircleTwoCenter.set((int) (back.x + x * value), (int) (back.y + y * value));
                             mCircleTwoCenter.set(mCircleTwoCenter.x - x, mCircleTwoCenter.y - y);
+
                         }
 //                        Log.d(TAG, "mCircleTwoCenter " + mCircleTwoCenter.x + "  " + mCircleTwoCenter.y);
                         mHanlder.sendEmptyMessage(0);
@@ -271,6 +343,10 @@ public class DropView extends View {
             }
         }
     };
+
+    public float getInterpolation(float input) {
+        return (float) (Math.cos((input + 1) * Math.PI) / 2.0f) + 0.5f;
+    }
 
     private Point getBackPoint() {
         if (canBack()) {

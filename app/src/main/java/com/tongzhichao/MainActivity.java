@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.tongzhichao.SoundWaves.SoundWaveActivity;
 import com.tongzhichao.circleprogress.CircleProgressActivity;
 import com.tongzhichao.hvac.view.HvacActivity;
 import com.tongzhichao.matrix.ScaleImageActivity;
@@ -27,6 +28,7 @@ import com.tongzhichao.path.FourPathCircleActivity;
 import com.tongzhichao.path.PointActivity;
 import com.tongzhichao.recyclerview.RecyclerViewActivity;
 import com.tongzhichao.scroll.ScrollActivity;
+import com.tongzhichao.test.TestActivity;
 import com.tongzhichao.xfermode.ColorActivity;
 
 import java.util.ArrayList;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 //        mDataList.add(new ViewBean("Scroll", ScrollActivity.class));
 //        mDataList.add(new ViewBean("Meter", MeterActivity.class));
         mDataList.add(new ViewBean("Color", ColorActivity.class));
+        mDataList.add(new ViewBean("SoundWave", SoundWaveActivity.class));
 //        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
 //        mDataList.add(new ViewBean("RecyclerView", RecyclerViewActivity.class));
     }
