@@ -6,8 +6,10 @@
     android:orientation="vertical">
 
     <com.tongzhichao.SoundWaves.SoundWaveView
+        android:id="@+id/soundWave"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_gravity="center" />
+
 
 </FrameLayout>

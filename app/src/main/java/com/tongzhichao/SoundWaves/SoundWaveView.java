@@ -31,6 +31,7 @@ public class SoundWaveView extends View {
 
     private int width;
     private int height;
+    private int voice;
 
     private int wide = 2;
     private float density;
@@ -116,6 +117,17 @@ public class SoundWaveView extends View {
 
     private float getAttenuation(int x) {
         return (float) (Math.sin(((float) (x * wide) / (width / Math.PI)))) * getSinY(x);
+    }
+
+    public synchronized void setVoice(int voice) {
+        if (voice > 30) {
+            voice = 30;
+        }
+        this.voice = voice;
+//        height = vheight * voice / 30;
+//        if (height > vheight) {
+//            height = vheight;
+//        }
     }
 
     @Override
@@ -226,17 +238,22 @@ public class SoundWaveView extends View {
         return x * wide;
     }
 
-    private float getY(float y) {
+    private synchronized float getY(float y) {
+        float gy;
         if (line == 1) {
-            return height / 2 - y;
+            gy = height / 2 - y;
         } else if (line == 2) {
-            return height / 2 - 4 * (y / 5);
+            gy = height / 2 - 4 * (y / 5);
         } else if (line == 3) {
-            return height / 2 - 3 * (y / 5);
+            gy = height / 2 - 3 * (y / 5);
         } else if (line == 4) {
-            return height / 2 - 2 * (y / 5);
+            gy = height / 2 - 2 * (y / 5);
+        } else {
+            gy = height / 2 - (y / 5);
         }
-        return height / 2 - (y / 5);
+        float tall = (gy-height / 2  );
+        tall = tall * voice / 30;
+        return tall+height / 2;
     }
 
     public class Point {
