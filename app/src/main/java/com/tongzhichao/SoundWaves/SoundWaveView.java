@@ -31,7 +31,7 @@ public class SoundWaveView extends View {
 
     private int width;
     private int height;
-    private int voice;
+    private int voice = 30;
 
     private int wide = 2;
     private float density;
@@ -39,6 +39,8 @@ public class SoundWaveView extends View {
     private int count;
 
     private int variable = 0;
+
+    private boolean voiceUp = false;
 
     private Handler handler = new Handler(Looper.myLooper());
 
@@ -49,6 +51,18 @@ public class SoundWaveView extends View {
             if (variable <= -getPointCount()) {
                 variable = 0;
             }
+            if (voiceUp) {
+                voice += 1;
+                if (voice >= 30) {
+                    voiceUp = false;
+                }
+            } else {
+                voice -= 1;
+                if (voice <= 5) {
+                    voiceUp = true;
+                }
+            }
+
             invalidate();
             animator();
         }
@@ -251,9 +265,9 @@ public class SoundWaveView extends View {
         } else {
             gy = height / 2 - (y / 5);
         }
-        float tall = (gy-height / 2  );
+        float tall = (gy - height / 2);
         tall = tall * voice / 30;
-        return tall+height / 2;
+        return tall + height / 2;
     }
 
     public class Point {
