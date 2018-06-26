@@ -1,9 +1,10 @@
 package com.tongzhichao.path;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.SeekBar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.tongzhichao.example.R;
 
@@ -31,16 +32,12 @@ public class FourPathCircleActivity extends AppCompatActivity implements SeekBar
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        switch (seekBar.getId()) {
-            case R.id.top:
-                fourPathCircle.setTopPoint(progress);
-                break;
-            case R.id.side:
-                fourPathCircle.setSidePoint(progress);
-                break;
-            case R.id.bottom:
-                fourPathCircle.setBottomPoint(progress);
-                break;
+        if (seekBar.getId()==R.id.top){
+            fourPathCircle.setTopPoint(progress);
+        }else if (seekBar.getId()==R.id.side){
+            fourPathCircle.setSidePoint(progress);
+        }else if (seekBar.getId()==R.id.bottom){
+            fourPathCircle.setBottomPoint(progress);
         }
     }
 

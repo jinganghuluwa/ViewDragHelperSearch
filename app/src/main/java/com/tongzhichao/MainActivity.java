@@ -2,16 +2,17 @@ package com.tongzhichao;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.tongzhichao.SoundWaves.SoundWaveActivity;
 import com.tongzhichao.circleprogress.CircleProgressActivity;
@@ -28,6 +29,7 @@ import com.tongzhichao.path.FourPathCircleActivity;
 import com.tongzhichao.path.PointActivity;
 import com.tongzhichao.recyclerview.RecyclerViewActivity;
 import com.tongzhichao.scroll.ScrollActivity;
+import com.tongzhichao.star.StarActivity;
 import com.tongzhichao.test.TestActivity;
 import com.tongzhichao.xfermode.ColorActivity;
 
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 //        mDataList.add(new ViewBean("Meter", MeterActivity.class));
         mDataList.add(new ViewBean("Color", ColorActivity.class));
         mDataList.add(new ViewBean("SoundWave", SoundWaveActivity.class));
+        mDataList.add(new ViewBean("Star", StarActivity.class));
 //        mDataList.add(new ViewBean("Hvac", HvacActivity.class));
 //        mDataList.add(new ViewBean("RecyclerView", RecyclerViewActivity.class));
     }

@@ -1,9 +1,10 @@
 package com.tongzhichao.path;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.SeekBar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.tongzhichao.example.R;
 
@@ -33,19 +34,14 @@ public class PointActivity extends AppCompatActivity implements SeekBar.OnSeekBa
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        switch (seekBar.getId()){
-            case R.id.top:
-                mPointView.setTopPoint(progress);
-                break;
-            case R.id.left:
-                mPointView.setLeftPoint(progress);
-                break;
-            case R.id.right:
-                mPointView.setRightPoint(progress);
-                break;
-            case R.id.bottom:
-                mPointView.setBottomPoint(progress);
-                break;
+        if (seekBar.getId()==R.id.top){
+            mPointView.setTopPoint(progress);
+        }else if (seekBar.getId()==R.id.left){
+            mPointView.setLeftPoint(progress);
+        }else if (seekBar.getId()==R.id.right){
+            mPointView.setRightPoint(progress);
+        }else if (seekBar.getId()==R.id.bottom){
+            mPointView.setBottomPoint(progress);
         }
     }
 

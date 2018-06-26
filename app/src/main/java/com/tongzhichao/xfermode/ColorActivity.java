@@ -1,10 +1,11 @@
 package com.tongzhichao.xfermode;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.tongzhichao.example.R;
 
@@ -39,27 +40,18 @@ public class ColorActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.black:
-                colorView.setColor(Color.BLACK);
-                break;
-            case R.id.gray:
-                colorView.setColor(Color.GRAY);
-                break;
-            case R.id.red:
-                colorView.setColor(Color.RED);
-                break;
-            case R.id.green:
-                colorView.setColor(Color.GREEN);
-                break;
-            case R.id.blue:
-                colorView.setColor(Color.BLUE);
-                break;
-            case R.id.yellow:
-                colorView.setColor(Color.YELLOW);
-                break;
-
-
+        if (v.getId()==R.id.black){
+            colorView.setColor(Color.BLACK);
+        }else if (v.getId()==R.id.gray){
+            colorView.setColor(Color.GRAY);
+        }else if (v.getId()==R.id.red){
+            colorView.setColor(Color.RED);
+        }else if (v.getId()==R.id.green){
+            colorView.setColor(Color.GREEN);
+        }else if (v.getId()==R.id.blue){
+            colorView.setColor(Color.BLUE);
+        }else if (v.getId()==R.id.yellow){
+            colorView.setColor(Color.YELLOW);
         }
     }
 }

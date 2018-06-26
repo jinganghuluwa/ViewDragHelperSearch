@@ -44,13 +44,10 @@ public class TemperatureControlView extends RelativeLayout {
     private OnClickListener mClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.temperature_control_up:
-                    up();
-                    break;
-                default:
-                    down();
-                    break;
+            if (v.getId()==R.id.temperature_control_up){
+                up();
+            }else {
+                down();
             }
         }
     };
