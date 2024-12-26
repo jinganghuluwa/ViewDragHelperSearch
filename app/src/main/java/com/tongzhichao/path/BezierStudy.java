@@ -6,18 +6,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
-<<<<<<< HEAD
 import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 
-=======
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.view.View;
-
->>>>>>> e68ee20b9d56e24e632d73781f3b199fb6600a9a
 public class BezierStudy extends View {
 
     private Paint mPaint;

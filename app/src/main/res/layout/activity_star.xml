@@ -8,16 +8,14 @@
     tools:context="com.tongzhichao.star.StarActivity">
 
     <FrameLayout
-        android:layout_width="1400dp"
-        android:background="@android:color/holo_blue_dark"
-        android:layout_height="1000dp">
+        android:layout_width="776dp"
+        android:layout_height="246dp"
+        android:background="@android:color/holo_blue_dark">
 
         <com.tongzhichao.star.StarView
             android:id="@+id/star"
-            android:layout_width="1200dp"
-            android:layout_height="800dp"
-            android:layout_gravity="center"
-             />
+            android:layout_width="776dp"
+            android:layout_height="246dp" />
     </FrameLayout>
 
 

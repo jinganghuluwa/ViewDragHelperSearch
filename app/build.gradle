@@ -24,17 +24,10 @@ android {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-<<<<<<< HEAD
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.activity:activity:1.9.3'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.12'
-=======
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:27.1.1'
-    compile 'com.android.support:design:27.1.1'
->>>>>>> e68ee20b9d56e24e632d73781f3b199fb6600a9a
 }

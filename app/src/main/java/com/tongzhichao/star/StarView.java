@@ -14,24 +14,24 @@ import androidx.annotation.Nullable;
 public class StarView extends View {
     private double allPer = 1.0;
 
-    private static final int RANDOM_LEVEL1_SPACE = 60;
-    private static final int RANDOM_LEVEL1_RANDOM = 80;
+    private static final int RANDOM_LEVEL1_SPACE = 30;
+    private static final int RANDOM_LEVEL1_RANDOM = 45;
     private static final int RANDOM_LEVEL3_SPACE = 15;
     //点点水平间隔
-    private static final int POINT1_HORIZONTAL_SPACE = 20;
-    private static final int POINT2_HORIZONTAL_SPACE = 30;
-    private static final int POINT3_HORIZONTAL_SPACE = 10;
+    private static final int POINT1_HORIZONTAL_SPACE = 8;
+    private static final int POINT2_HORIZONTAL_SPACE = 10;
+    private static final int POINT3_HORIZONTAL_SPACE = 5;
     private static final int POINT5_HORIZONTAL_SPACE = 2;
     //点点大小
-    private static final int POINT_LENGTH = 4;
+    private static final int POINT_LENGTH = 2;
     //1组数量
-    private static final int GROUP1_COUNT = 18;
+    private static final int GROUP1_COUNT = 6;
     //1组步长
     private static final double GROUP1_STEP = 0.2;
     //2组数量
     private static final int GROUP2_COUNT = 20;
-    private static final int GROUP3_COUNT = 20;
-    private static final int GROUP5_COUNT = 50;
+    private static final int GROUP3_COUNT = 14;
+    private static final int GROUP5_COUNT = 30;
     private static final double GROUP2_STEP = 0.1;
     private static final double GROUP3_STEP = 0.15;
 
@@ -116,11 +116,11 @@ public class StarView extends View {
     private void drawLineGroup1(Canvas canvas) {
         float color;
         for (int i = 0; i < GROUP1_COUNT; i++) {
-            if (i < 9) {
-                color = (float) (0.9 * (i + 1));
+            if (i < 3) {
+                color = (float) (0.3 * (i + 1));
                 paint1.setColor(getColor(color));
             } else {
-                color = (float) (5.4 - 0.9 * i);
+                color = (float) (1.8 - 0.3 * i);
                 paint1.setColor(getColor(color));
             }
             for (int j = width / 5; j < width - 10; j += POINT1_HORIZONTAL_SPACE + POINT_LENGTH) {
@@ -131,7 +131,7 @@ public class StarView extends View {
                 //    float a = (float) (width - 10 - j) / 100f;
                 //    paint1.setColor(getColor(color * a));
                 //}
-                canvas.drawPoint(random(j), random(translateY(((line1(j) * (1 + GROUP1_STEP * i)) * height / 2)) + 400), paint1);
+                canvas.drawPoint(random(j), random(translateY(((line1(j) * (1 + GROUP1_STEP * i)) * height / 2)) + 100), paint1);
             }
         }
 
@@ -157,7 +157,7 @@ public class StarView extends View {
                 //    //Log.d("tzc","j:"+j+" value:"+(float) (width-j) / 300f);
                 //    paint1.setColor(getColor(color * (float) (width - j) / 300f));
                 //}
-                canvas.drawPoint(random((float) j), random((float) ( (translateY((line2(j) * (1 - GROUP2_STEP * i) * height / 3))))), paint1);
+                canvas.drawPoint(random((float) j,15), random(  (translateY((line2(j) * (1 - GROUP2_STEP * i) * height / 3))),10), paint1);
             }
         }
     }
@@ -195,7 +195,7 @@ public class StarView extends View {
                 //    //Log.d("tzc","j:"+j+" value:"+(float) (width-j) / 300f);
                 //    paint1.setColor(getColor(color * (float) (3 * width / 5 - j) / 100f));
                 //}
-                canvas.drawPoint(random((float) ((float) j+200*allPer)), random(translateY(((line4(j) + GROUP3_STEP * i) * height / 3)) - 420), paint1);
+                canvas.drawPoint(random((float) ((float) j+100*allPer)), random(translateY(((line4(j) + GROUP3_STEP * i) * height / 3)) - 120), paint1);
             }
         }
     }
@@ -207,7 +207,7 @@ public class StarView extends View {
             Log.d("tzc","i=:"+i+" color:"+color);
             paint1.setColor(getColor(1 ));
             for (int j = 0 ; j <  width ; j +=  1) {
-                j+=0.1*j;
+                j+=0.05*j;
                 //if (j < width / 6 + 100) {
                 //    //Log.d("tzc","j:"+j+" value:"+((float) j)  / 300f);
                 //    paint1.setColor(getColor(color * ((float) j-((float) width / 6)) / 100f));
@@ -215,7 +215,7 @@ public class StarView extends View {
                 //    //Log.d("tzc","j:"+j+" value:"+(float) (width-j) / 300f);
                 //    paint1.setColor(getColor(color * (float) (3 * width / 5 - j) / 100f));
                 //}
-                canvas.drawPoint(random((float) j+i*20), random(translateY(-line5(j)*Math.sin((double) i*Math.PI*2 /GROUP5_COUNT) ) -i+400,2), paint1);
+                canvas.drawPoint(random((float) j+i*10), random(translateY(-line5(j)*Math.sin((double) i*Math.PI*3 /GROUP5_COUNT) ) -i+100,2), paint1);
             }
         }
     }
@@ -226,7 +226,7 @@ public class StarView extends View {
     }
 
     private float random(float value) {
-        return (float) (value + Math.random() * 5);
+        return (float) (value + Math.random() * 2);
     }
 
     private float random(float value, int max) {
